@@ -1,0 +1,42 @@
+A shopping cart can:
+
+   count the total number of all occurrences of all items in the cart
+      a cart is empty when it is first created
+
+   count the number of occurrences of a stock item in the cart
+      a cart is empty when it is first created
+
+   add one or more occurrences of a stock item
+      adding stock items increases the number of occurrences of the stock item in the cart
+
+   remove one or more occurrences of a stock item
+      removing a stock item decreases, possibly to zero, the number of occurrences of this stock item in the cart
+      if there are fewer occurrences of the stock item than specified, ignore the request
+
+   compute the total of the prices of the items in the cart
+
+   get the list "item counts", that is, a list containing dictionaries with the following keys,values:
+      item -- the item
+      count -- the number of occurrences of an item in the cart, must be > 0
+      line_price -- the price of count occurrences of item
+   where no two elements of the list have the same item
+
+   suggest a shipping strategy based on the total weight of the items:
+      less than one pound: US postal service
+      greater than or equal to 1 pound and less than 200 pounds: UPS or FedEx
+      greater than or equal to 200 pounds: independent freight contractor
+
+Collaborators:
+
+   StockItem relevent instance properties/methods:
+      unit_price
+      unit_weight
+   Instances of StockItem are hashable.
+
+   Shipper class (factory) methods:
+      get_usps() -- returns the USPS shipper
+      get_ups() -- returns the UPS shipper
+      get_fedex() -- returns the FedEx shipper
+      get_independent() -- returns a shipper object that can be filled in with an independent contractor's information
+
+

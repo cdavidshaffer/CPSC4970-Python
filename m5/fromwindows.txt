@@ -1,0 +1,4 @@
+This file came from a windows
+machine.  The default encoding
+is utf-8 on that platform as well.
+I think 🌮s are 👌.
